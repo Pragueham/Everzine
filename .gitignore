@@ -1,0 +1,4 @@
+*.pyc
+toptrumpadmin/settings/local.py
+.DS_Store
+uploads/cards/*
