@@ -2,3 +2,4 @@
 toptrumpadmin/settings/local.py
 .DS_Store
 uploads/cards/*
+todos.txt
