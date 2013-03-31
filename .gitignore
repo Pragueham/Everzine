@@ -1,5 +1,5 @@
 *.pyc
-toptrumpadmin/settings/local.py
+everzine/settings/local.py
 .DS_Store
 uploads/cards/*
 todos.txt
