@@ -1,0 +1,43 @@
+{% extends "_layouts/base.html" %}
+{% load url from future %}
+
+{% block page_title %} Article posts | {% endblock %}
+
+{% block page_content %}
+
+    {% for edition in edition_list %}
+        <div class="masthead">
+            <header>
+                <h1> {{ edition.title }}</h1>
+            </header>
+        </div>
+        <div class="main wrapper clearfix">
+
+            <article class="east-side">
+            <header>
+                    <h1>WOROROR</h1>
+            </header>
+            {% for article in edition.article_set.all %}
+                <article>
+                    <section>
+                        <h2><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h2>
+                        <p>{{ article.content }}</p>
+                    </section>
+                </article>
+            {% empty %}
+            <article>
+                    <section>
+                        <h2>NOWT</a></h2>
+                    </section>
+                </article>
+            {% endfor %}
+
+            <article class="west-side">
+                <header>
+                    <h1>West</h1>
+                </header>
+            </article>
+
+        </div> <!-- #main -->
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "_layouts/base.html" %}
+{% load url from future %}
+{% block page_title %} {{ card.title }} | {% endblock %}
+
+{% block page_content %}
+<div class="row-fluid">
+    <div class="span8">
+        <div class="well well-large">
+            <div class="well well-small" style="background-color:#FFF;"><h2 style="margin:0;">{{ card.title|capfirst }}</h2></div>
+
+            <img src="{{ card.image.url }}" alt="{{ card.title }}" class="img-rounded">
+
+
+            {% for stat in card.stat_set.all %}
+                <div class="row-fluid well well-small" style="background-color:#FFF; margin-bottom:0; margin-top:10px;">
+                    <div class="span8 float-left" style="min-height:0 !important;">{{ stat.name }}</div>
+                    <div class="span4 float-left" style="min-height:0 !important;">{{ stat.value }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="span4">
+        <p>
+            <button class="btn btn-large btn-primary" type="button">Tweet this Top Trump</button>
+        </p>
+        <p>
+            <button class="btn btn-large btn-primary" type="button">Share on Facebook</button>
+        </p>
+        <p>
+            <button class="btn btn-large btn-primary" type="button">Download Application</button>
+        </p>
+        <p>
+            <button class="btn btn-large btn-primary" type="button">Report this card</button>
+        </p>
+    </div>
+</div>
+{% endblock %}
